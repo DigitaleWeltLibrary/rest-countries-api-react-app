@@ -1,0 +1,16 @@
+name: Deploy Vite App
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    uses: DigitaleWeltLibrary/GitHub-Actions-to-deploy-vite/.github/workflows/deploy.yml@main
+    with:
+      node-version: "lts/*"
+      base-path: "/rest-countries-api-react-app/"
