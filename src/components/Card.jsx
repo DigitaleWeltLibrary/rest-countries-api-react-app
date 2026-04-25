@@ -1,4 +1,13 @@
-export const Card = ({ png, svg, alt, title, population, region, capital }) => {
+export const Card = ({
+  png,
+  svg,
+  alt,
+  title,
+  population,
+  region,
+  capital,
+
+}) => {
   return (
     <section className="card">
       <picture>
