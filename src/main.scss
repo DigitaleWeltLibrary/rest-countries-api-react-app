@@ -144,6 +144,12 @@ body {
       width: 300px;
       border-radius: 1rem;
       overflow: hidden;
+      cursor: pointer;
+      transition: translate 500ms;
+
+      &:hover {
+        translate: 0 -5px;
+      }
 
       picture,
       picture > img {

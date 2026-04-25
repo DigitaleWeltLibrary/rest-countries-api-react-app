@@ -6,10 +6,10 @@ export const Card = ({
   population,
   region,
   capital,
-
+  setPageLink,
 }) => {
   return (
-    <section className="card">
+    <section className="card" onClick={() => setPageLink(title)}>
       <picture>
         <source srcSet={png} type="image/png" />
         <img src={svg} alt={alt} loading="lazy" />

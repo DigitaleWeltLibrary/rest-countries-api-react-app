@@ -2,7 +2,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
-export default function Header() {
+export default function Header({ setLink }) {
   // NOTE state to toggle between light and dark mode
   const [getMode, setMode] = useState(() => {
     var mode = localStorage.getItem("mode") ?? "dark";
@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header>
       <section>
-        <h1>Where in the world?</h1>
+        <h1 onClick={() => setLink("")}>Where in the world?</h1>
         <div
           onClick={() =>
             setMode((prev) => (prev == "light" ? "dark" : "light"))
