@@ -1,4 +1,5 @@
 import ControlPanel from "./components/controlPanel";
+import DataView from "./components/dataView";
 import Header from "./components/header";
 import "./main.scss";
 
@@ -7,7 +8,7 @@ export default function App() {
     <>
       <Header />
       <ControlPanel />
-      <h1>Hello, World!</h1>
+      <DataView />
     </>
   );
 }
