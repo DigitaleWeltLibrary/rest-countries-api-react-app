@@ -9,6 +9,7 @@ export default function App() {
   const [getRegion, setRegion] = useState("");
   const [getSearch, setSearch] = useState("");
   const [getLastAction, setLastAction] = useState(null);
+  const [getLink, setLink] = useState("");
 
   //NOTE reste filters when one of them is used, to avoid confusion and
   useEffect(() => {
@@ -16,21 +17,35 @@ export default function App() {
     else if (getLastAction === "region") setSearch(null);
   }, [getLastAction]);
 
+  // NOTE reset filters when the link changes
+  useEffect(() => {
+    setRegion(null);
+    setSearch(null);
+    setLastAction(null);
+  }, [getLink]);
+
   return (
     <>
-      <Header />
-      <ControlPanel
-        getRegion={getRegion}
-        setRegion={setRegion}
-        setSearch={setSearch}
-        getSearch={getSearch}
-        setLastAction={setLastAction}
-      />
-      <DataView
-        getLastAction={getLastAction}
-        getRegion={getRegion}
-        getSearch={getSearch}
-      />
+      <Header setLink={setLink} />
+      {getLink == "" ? (
+        <>
+          <ControlPanel
+            getRegion={getRegion}
+            setRegion={setRegion}
+            setSearch={setSearch}
+            getSearch={getSearch}
+            setLastAction={setLastAction}
+          />
+          <DataView
+            getLastAction={getLastAction}
+            getRegion={getRegion}
+            getSearch={getSearch}
+            setPageLink={setLink}
+          />
+        </>
+      ) : (
+        <h1>{getLink}</h1>
+      )}
     </>
   );
 }

@@ -2,7 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Card } from "./Card";
 
-export default function DataView({ getLastAction, getRegion, getSearch }) {
+export default function DataView({
+  getLastAction,
+  getRegion,
+  getSearch,
+  setPageLink,
+}) {
   //NOTE states for data, loading and error handling, and link for the API endpoint
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -68,6 +73,7 @@ export default function DataView({ getLastAction, getRegion, getSearch }) {
           population={item.population}
           region={item.region}
           capital={item.capital}
+          setPageLink={setPageLink}
         />
       ))}
     </article>
