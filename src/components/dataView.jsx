@@ -49,17 +49,17 @@ export default function DataView({
 
   if (loading)
     return (
-      <h1>We are currently searching for the data related to this query...</h1>
+      <h1 className="center">We are currently searching for the data related to this query...</h1>
     );
   if (error)
     return (
-      <h1>
+      <h1 className="center">
         Oops - a mistake happened
         <br />
         {error}
       </h1>
     );
-  if (data.length === 0) return <h1>No data was found for the filter.</h1>;
+  if (data.length === 0) return <h1 className="center">No data was found for the filter.</h1>;
 
   return (
     <article>
