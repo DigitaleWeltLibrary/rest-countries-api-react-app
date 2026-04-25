@@ -15,20 +15,24 @@
 body {
   background: hsl(0, 0%, 99%);
   color: hsl(200, 15%, 8%);
+  transition: 500ms;
 
   .control-panel > section,
   .control-panel > select,
   .card {
     background: hsla(0, 0%, 50%, 0.179);
+    transition: 500ms;
   }
 
   &.dark,
   &.dark option {
     background: hsl(207, 26%, 17%);
+    transition: 500ms;
   }
 
   &.dark * {
     color: hsl(0, 100%, 100%);
+   
   }
 
   header {
@@ -137,7 +141,6 @@ body {
       width: 300px;
       border-radius: 1rem;
       overflow: hidden;
-
 
       picture,
       picture > img {
