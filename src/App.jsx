@@ -26,7 +26,11 @@ export default function App() {
         getSearch={getSearch}
         setLastAction={setLastAction}
       />
-      <DataView />
+      <DataView
+        getLastAction={getLastAction}
+        getRegion={getRegion}
+        getSearch={getSearch}
+      />
     </>
   );
 }

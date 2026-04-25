@@ -32,7 +32,6 @@ body {
 
   &.dark * {
     color: hsl(0, 100%, 100%);
-   
   }
 
   header {
@@ -49,6 +48,10 @@ body {
 
       h1 {
         font-size: 1.75rem;
+      }
+
+      body h1 {
+        color: red;
       }
 
       div {
