@@ -4,11 +4,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function InfoPage({ getLink, setLink }) {
+  // NOTE states for data, loading and error handling, and border country names
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [getBorderNames, setBorderNames] = useState([]);
 
+
+  // NOTE useEffect to fetch data from the API when the component mounts or when getLink changes
   useEffect(() => {
     const fetchData = async () => {
       if (!getLink) return;
@@ -44,6 +47,7 @@ export default function InfoPage({ getLink, setLink }) {
   if (loading) return <h1 className="center">Loading country details...</h1>;
   if (error || !data) return <h1 className="center">{error || "No data found"}</h1>;
 
+  // NOTE extracting native name, currencies, and languages with fallbacks
   const nativeName = data.name.nativeName
     ? Object.values(data.name.nativeName)[0].official
     : data.name.common;
