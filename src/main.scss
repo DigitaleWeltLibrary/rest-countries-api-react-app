@@ -20,8 +20,8 @@ body {
   .control-panel > section,
   .control-panel > select,
   .card,
- .back,
-   .border-item {
+  .back,
+  .border-item {
     background: hsla(0, 0%, 50%, 0.179);
     transition: 500ms;
   }
@@ -34,6 +34,11 @@ body {
 
   &.dark * {
     color: hsl(0, 100%, 100%);
+  }
+
+  .center {
+    text-align: center;
+    margin: 1rem;
   }
 
   header {
@@ -185,7 +190,6 @@ body {
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
-
 
     .back {
       padding: 0.75rem;

@@ -41,8 +41,8 @@ export default function InfoPage({ getLink, setLink }) {
     fetchData();
   }, [getLink]);
 
-  if (loading) return <h1>Loading country details...</h1>;
-  if (error || !data) return <h1>{error || "No data found"}</h1>;
+  if (loading) return <h1 className="center">Loading country details...</h1>;
+  if (error || !data) return <h1 className="center">{error || "No data found"}</h1>;
 
   const nativeName = data.name.nativeName
     ? Object.values(data.name.nativeName)[0].official
