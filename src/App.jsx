@@ -3,6 +3,7 @@ import ControlPanel from "./components/controlPanel";
 import DataView from "./components/dataView";
 import Header from "./components/header";
 import "./main.scss";
+import InfoPage from "./components/infoPage";
 
 export default function App() {
   //NOTE states for region and search input values, and last action performed
@@ -44,7 +45,7 @@ export default function App() {
           />
         </>
       ) : (
-        <h1>{getLink}</h1>
+        <InfoPage getLink={getLink} setLink={setLink} />
       )}
     </>
   );
